@@ -1,0 +1,23 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'CloudFormation template to launch EC2 instances'
+
+Resources:
+  MyEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: 'm6g.large'  # Change instance type as needed
+      ImageId: 'ami-0fe5557cea38b4ce8'    # Replace with your desired AMI ID
+      KeyName: 'POCInstanceKey'     # Replace with your SSH key pair name
+      SecurityGroupIds:
+        - 'sg-06d41927f9bbc81e1'          # Replace with your security group ID
+      Tags:
+        - Key: 'Name'
+          Value: 'MyEC2Instance' # Replace with your desired instance name
+
+Outputs:
+  InstanceId:
+    Description: 'ID of the newly created EC2 instance'
+    Value: !Ref MyEC2Instance
+  PublicIp:
+    Description: 'Public IP address of the newly created EC2 instance'
+    Value: !GetAtt MyEC2Instance.PublicIp

@@ -1,0 +1,43 @@
+apiVersion: v1
+items:
+- apiVersion: networking.k8s.io/v1
+  kind: Ingress
+  metadata:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      meta.helm.sh/release-name: saviynt-cluster
+      meta.helm.sh/release-namespace: saviynt-system
+      nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+      nginx.ingress.kubernetes.io/whitelist-source-range: 34.199.249.8/32, 52.66.158.169/32,
+        34.243.118.114/32, 52.61.74.66/32, 13.57.76.208/32
+    creationTimestamp: "2022-11-29T01:20:30Z"
+    generation: 1
+    labels:
+      app.kubernetes.io/managed-by: Helm
+    name: k8dashboard-ingress
+    namespace: kubernetes-dashboard
+    resourceVersion: "4115"
+    uid: 01b2c1b8-f6b1-41ad-8ab7-b7071c582551
+  spec:
+    rules:
+    - host: k8dash-nomura-prod.saviyntcloud.com
+      http:
+        paths:
+        - backend:
+            service:
+              name: kubernetes-dashboard
+              port:
+                number: 443
+          path: /
+          pathType: Prefix
+    tls:
+    - hosts:
+      - k8dash-nomura-prod.saviyntcloud.com
+      secretName: saviyntcloud-cert
+  status:
+    loadBalancer:
+      ingress:
+      - hostname: a7a8ddc73a955462cb0525562671a1ff-1489304233.eu-west-1.elb.amazonaws.com
+kind: List
+metadata:
+  resourceVersion: ""
