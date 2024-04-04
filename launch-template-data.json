@@ -1,0 +1,269 @@
+{
+    "LaunchTemplateData": {
+        "EbsOptimized": true,
+        "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::442049251927:instance-profile/eks-12c26077-88d8-5546-aaab-a4688e8b1a04"
+        },
+        "BlockDeviceMappings": [
+            {
+                "DeviceName": "/dev/xvda",
+                "Ebs": {
+                    "Encrypted": true,
+                    "DeleteOnTermination": true,
+                    "Iops": 3000,
+                    "KmsKeyId": "arn:aws:kms:eu-west-1:442049251927:key/7406a1e8-f5ef-484b-a852-96e91e3a2ba3",
+                    "SnapshotId": "snap-0bc090e951d22227c",
+                    "VolumeSize": 100,
+                    "VolumeType": "gp3",
+                    "Throughput": 125
+                }
+            }
+        ],
+        "NetworkInterfaces": [
+            {
+                "DeleteOnTermination": true,
+                "Description": "",
+                "DeviceIndex": 0,
+                "Groups": [
+                    "sg-0494cbf444a476cfd"
+                ],
+                "InterfaceType": "interface",
+                "Ipv6Addresses": [],
+                "PrivateIpAddresses": [
+                    {
+                        "Primary": true,
+                        "PrivateIpAddress": "100.69.156.91"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.10"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.42"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.24"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.54"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.15"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.112"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.16"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.22"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.31"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.107"
+                    }
+                ],
+                "SubnetId": "subnet-0a96b9d43d15fb850",
+                "NetworkCardIndex": 0
+            },
+            {
+                "DeleteOnTermination": true,
+                "Description": "aws-K8S-i-0e45eeb87bd4a70d6",
+                "DeviceIndex": 1,
+                "Groups": [
+                    "sg-0494cbf444a476cfd"
+                ],
+                "InterfaceType": "interface",
+                "Ipv6Addresses": [],
+                "PrivateIpAddresses": [
+                    {
+                        "Primary": true,
+                        "PrivateIpAddress": "100.69.156.29"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.85"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.41"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.121"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.108"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.79"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.120"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.44"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.94"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.47"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.78"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.68"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.117"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.37"
+                    }
+                ],
+                "SubnetId": "subnet-0a96b9d43d15fb850",
+                "NetworkCardIndex": 0
+            },
+            {
+                "DeleteOnTermination": true,
+                "Description": "aws-K8S-i-0e45eeb87bd4a70d6",
+                "DeviceIndex": 2,
+                "Groups": [
+                    "sg-0494cbf444a476cfd"
+                ],
+                "InterfaceType": "interface",
+                "Ipv6Addresses": [],
+                "PrivateIpAddresses": [
+                    {
+                        "Primary": true,
+                        "PrivateIpAddress": "100.69.156.118"
+                    },
+                    {
+                        "Primary": false,
+                        "PrivateIpAddress": "100.69.156.8"
+                    }
+                ],
+                "SubnetId": "subnet-0a96b9d43d15fb850",
+                "NetworkCardIndex": 0
+            }
+        ],
+        "ImageId": "ami-094f07fc2a29cc3d4",
+        "InstanceType": "m7g.2xlarge",
+        "KeyName": "4420-euw1-nomuraprod-instancekey_11282022",
+        "Monitoring": {
+            "Enabled": false
+        },
+        "Placement": {
+            "AvailabilityZone": "eu-west-1a",
+            "GroupName": "",
+            "Tenancy": "default"
+        },
+        "DisableApiTermination": false,
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "UserData": "TUlNRS1WZXJzaW9uOiAxLjANCkNvbnRlbnQtVHlwZTogbXVsdGlwYXJ0L21peGVkOyBib3VuZGFyeT0iPT1NWUJPVU5EQVJZPT0iDQoNCi0tPT1NWUJPVU5EQVJZPT0NCkNvbnRlbnQtVHlwZTogdGV4dC94LXNoZWxsc2NyaXB0OyBjaGFyc2V0PSJ1cy1hc2NpaSINCiMhL2Jpbi9iYXNoDQpzZXQgLWV4DQpCNjRfQ0xVU1RFUl9DQT1MUzB0TFMxQ1JVZEpUaUJEUlZKVVNVWkpRMEZVUlMwdExTMHRDazFKU1VNdmFrTkRRV1ZoWjBGM1NVSkJaMGxDUVVSQlRrSm5hM0ZvYTJsSE9YY3dRa0ZSYzBaQlJFRldUVkpOZDBWUldVUldVVkZFUlhkd2NtUlhTbXdLWTIwMWJHUkhWbnBOUWpSWVJGUkplVTFVUlhsUFZFRjRUVVJWZWsxR2IxaEVWRTE1VFZSRmVVNXFRWGhOUkZWNlRVWnZkMFpVUlZSTlFrVkhRVEZWUlFwQmVFMUxZVE5XYVZwWVNuVmFXRkpzWTNwRFEwRlRTWGRFVVZsS1MyOWFTV2gyWTA1QlVVVkNRbEZCUkdkblJWQkJSRU5EUVZGdlEyZG5SVUpCVFVOUUNtZEZaRnBOY3l0MU1uQldPRVkzZFRNNE5FRjFjRkpDVVhkWFVFWjVOazFuWVRaV1RtSjNRazFpVmtSTmJFMUJha0ZKUkd4a09EZEtSMnhEWTBKalJVRUtRWHBWUmpsVGFYaG9hMFl4THpKYVJ6VXliSFJGWVVnelV5dFRSekJLUVRZNFZFbzNaWGRMWWt4WVlWVjJVRWt5UkZKSUwwMHphWFJsUm1oRFZFSlFRUXBvWlhFcmNUWnhkV3BEYzA4dlpUVm9Oa1F5U1ZCRGNtaDFLMmx4UVRKVWJVSm5ZekppYTBNeGRVUkdXVnByWVRoRGFFUkhLekpFTVZNeWJXYzRSbFk1Q21SVVVVcExXRkp3YTFwdVp5OVFZeXRXVHpaNmJWaEJMMFYwYTJsc01GRXlXRkprU2l0R2NrOUlRa2RYYVhsVGRtTktla1JyVml0RmFsUkdaMWh2UVdFS1YzZE1lR1JNTjFocmJHZzVTbms1T0dReFMxRm9iR2cxZGsxa056QlhXRTFtUVVWS05sa3JZamhJZG5SWWRHRjVOMmg0ZG1ScWJGRTVaa3BTTXpsT05RcE9kbUZVYTJoS1RUaHBWR0l3V1N0MmEySnpRMEYzUlVGQllVNWFUVVpqZDBSbldVUldVakJRUVZGSUwwSkJVVVJCWjB0clRVRTRSMEV4VldSRmQwVkNDaTkzVVVaTlFVMUNRV1k0ZDBoUldVUldVakJQUWtKWlJVWktlbFpVUkZSWk1VMXpLMlpVYjFoVlVFeENLMnBKU1RSaUt5OU5RbFZIUVRGVlpFVlJVVThLVFVGNVEwTnRkREZaYlZaNVltMVdNRnBZVFhkRVVWbEtTMjlhU1doMlkwNUJVVVZNUWxGQlJHZG5SVUpCU0ZKc1ZWRkxURXhPYWxkRUx6SktRelU0YkFwVVpITk1NRmMxU0cxeGREaE5UWFZIVEZoT1MxRklkV2huYUhNd1ZHOUpTblE1ZVRBMlVUUnViSFF6TDBsa1RrVjBSRU5aY0ZncmVXWnJWVzU1TTJoMUNta3lRVWx2WWtWVmNrSjVSVmMzYUhaSmVIUmtjMEZuVFdoemVWWlVURkZJUm5CV1VrWmpXR0UxWVZGVmNtRmllRWh6YUd4SmFsVmFlbmRHTmpCaWRtd0tXVWx0VldOallVOTZTV1p0YzFodU5FMUJURW8yTlhWclZrVXpVREJhZUROMlNsbDZkakZ4Wm13eWRqSlRaREZGU1U5S2VYcE9WMWxTTTBreGNsVk9NQXBWUldGcmJtcFZkVTVOWmxSak1VZFBRVmxIVXk5a01tczVjVUZ3YXpKQ1QzWjNlbmxMVXpFMmJFSjJOazFaWTNsdlNtWkZPV1pWYkRKV01WSmljazVLQ2pOd1YyNURWSFZNSzFvMVJEZ3dkVVp0TVZBclNHOVhWelpKYVVadk0xRkdXblZoWlVoaFVVVlBjbUp3ZFZaVk9GVTJjMEp3TmpjNVZreDZRbUk1V1ZnS01WRkZQUW90TFMwdExVVk9SQ0JEUlZKVVNVWkpRMEZVUlMwdExTMHRDZz09DQpBUElfU0VSVkVSX1VSTD1odHRwczovL0FGNkUwMThBMDczNEEyNkU3RjZFNEU3OUY4RDE0M0Q4LmdyNy5ldS13ZXN0LTEuZWtzLmFtYXpvbmF3cy5jb20NCks4U19DTFVTVEVSX0ROU19JUD0xMC4xMDAuMC4xMA0KL2V0Yy9la3MvYm9vdHN0cmFwLnNoIG5vbXVyYS1wcm9kLWVrcyAtLWt1YmVsZXQtZXh0cmEtYXJncyAnLS1ub2RlLWxhYmVscz1la3MuYW1hem9uYXdzLmNvbS9zb3VyY2VMYXVuY2hUZW1wbGF0ZVZlcnNpb249MSxla3MuYW1hem9uYXdzLmNvbS9ub2RlZ3JvdXAtaW1hZ2U9YW1pLTBkMDNhN2Q2YzkwMTM2ZjJkLGVrcy5hbWF6b25hd3MuY29tL2NhcGFjaXR5VHlwZT1PTl9ERU1BTkQsZWtzLmFtYXpvbmF3cy5jb20vbm9kZWdyb3VwPW5vbXVyYS1wcm9kLWVrcyxla3MuYW1hem9uYXdzLmNvbS9zb3VyY2VMYXVuY2hUZW1wbGF0ZUlkPWx0LTA3MDM1NTM4ZjIxZGY3YWFiIC0tbWF4LXBvZHM9NTgnIC0tYjY0LWNsdXN0ZXItY2EgJEI2NF9DTFVTVEVSX0NBIC0tYXBpc2VydmVyLWVuZHBvaW50ICRBUElfU0VSVkVSX1VSTCAtLWRucy1jbHVzdGVyLWlwICRLOFNfQ0xVU1RFUl9ETlNfSVAgLS11c2UtbWF4LXBvZHMgZmFsc2UNCg0KDQotLT09TVlCT1VOREFSWT09LS0NCg==",
+        "TagSpecifications": [
+            {
+                "ResourceType": "instance",
+                "Tags": [
+                    {
+                        "Key": "Environment",
+                        "Value": "prod"
+                    },
+                    {
+                        "Key": "eks:cluster-name",
+                        "Value": "nomura-prod-eks"
+                    },
+                    {
+                        "Key": "k8s.io/cluster-autoscaler/nomura-prod-eks",
+                        "Value": "owned"
+                    },
+                    {
+                        "Key": "Client",
+                        "Value": "nomura"
+                    },
+                    {
+                        "Key": "Backupdr",
+                        "Value": "ec2prod"
+                    },
+                    {
+                        "Key": "Owner",
+                        "Value": "shaumik.de"
+                    },
+                    {
+                        "Key": "k8s.io/cluster-autoscaler/enabled",
+                        "Value": "true"
+                    },
+                    {
+                        "Key": "saviynt:business:owner",
+                        "Value": "shaumik.de@saviynt.com"
+                    },
+                    {
+                        "Key": "eks:nodegroup-name",
+                        "Value": "nomura-prod-eks"
+                    },
+                    {
+                        "Key": "Name",
+                        "Value": "nomura-prod-eks"
+                    },
+                    {
+                        "Key": "kubernetes.io/cluster/nomura-prod-eks",
+                        "Value": "owned"
+                    }
+                ]
+            }
+        ],
+        "CpuOptions": {
+            "CoreCount": 4,
+            "ThreadsPerCore": 2
+        },
+        "CapacityReservationSpecification": {
+            "CapacityReservationPreference": "open"
+        },
+        "HibernationOptions": {
+            "Configured": false
+        },
+        "MetadataOptions": {
+            "HttpTokens": "optional",
+            "HttpPutResponseHopLimit": 1,
+            "HttpEndpoint": "enabled",
+            "HttpProtocolIpv6": "disabled",
+            "InstanceMetadataTags": "disabled"
+        },
+        "EnclaveOptions": {
+            "Enabled": false
+        },
+        "PrivateDnsNameOptions": {
+            "HostnameType": "ip-name",
+            "EnableResourceNameDnsARecord": false,
+            "EnableResourceNameDnsAAAARecord": false
+        },
+        "MaintenanceOptions": {
+            "AutoRecovery": "default"
+        },
+        "DisableApiStop": false
+    }
+}
