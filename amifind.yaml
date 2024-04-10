@@ -2,3 +2,8 @@ aws ec2 describe-images \
     --owners amazon \
     --filters "Name=name,Values=*amazon-eks-arm64-node-1.19*" "Name=architecture,Values=arm64" \
     --query 'sort_by(Images, &CreationDate)[-1].ImageId'
+
+
+
+
+aws ec2 describe-images     --owners amazon     --filters "Name=name,Values=*amazon-eks-arm64-node-1.21*" "Name=architecture,Values=arm64"     --query 'sort_by(Images, &CreationDate)[-1].ImageId'
