@@ -1,0 +1,4 @@
+aws ec2 describe-images \
+    --owners amazon \
+    --filters "Name=name,Values=*amazon-eks-node-1.19*" "Name=architecture,Values=arm64" \
+    --query 'sort_by(Images, &CreationDate)[-1].ImageId'
