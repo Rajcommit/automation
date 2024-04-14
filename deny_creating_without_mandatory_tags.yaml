@@ -1,0 +1,142 @@
+#DenyCreatingResourcesWithoutMandatoryTags
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Deny",
+      "Action": [
+        "elasticloadbalancing:CreateLoadBalancer"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAllValues:StringNotEquals": {
+          "aws:TagKeys": [
+            "Client"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Statement2",
+      "Effect": "Deny",
+      "Action": [
+        "elasticloadbalancing:CreateLoadBalancer"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAllValues:StringNotEquals": {
+          "aws:TagKeys": [
+            "Owner"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Statement3",
+      "Effect": "Deny",
+      "Action": [
+        "elasticloadbalancing:CreateLoadBalancer"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAllValues:StringNotEquals": {
+          "aws:TagKeys": [
+            "Environment"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Statement4",
+      "Effect": "Deny",
+      "Action": [
+        "elasticloadbalancing:CreateLoadBalancer"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "ForAllValues:StringNotEquals": {
+          "aws:TagKeys": [
+            "Name"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Statement5",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:RunInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringNotEquals": {
+          "aws:TagKeys": [
+            "Name"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Statement6",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:RunInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringNotEquals": {
+          "aws:TagKeys": [
+            "Environment"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Statement7",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:RunInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringNotEquals": {
+          "aws:TagKeys": [
+            "Client"
+          ]
+        }
+      }
+    },
+    {
+      "Sid": "Statement8",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:RunInstances"
+      ],
+      "Resource": [
+        "arn:aws:ec2:*:*:instance/*"
+      ],
+      "Condition": {
+        "ForAllValues:StringNotEquals": {
+          "aws:TagKeys": [
+            "Owner"
+          ]
+        }
+      }
+    }
+  ]
+}
