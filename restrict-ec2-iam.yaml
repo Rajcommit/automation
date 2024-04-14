@@ -1,0 +1,108 @@
+#restrict-ec2-iam
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Deny",
+      "Action": [
+        "iam:UpdateUser",
+        "iam:CreateRole",
+        "iam:DeleteRole",
+        "iam:CreateUser",
+        "iam:CreateAccessKey"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "ForAnyValue:StringNotLike": {
+          "aws:userid": "arn:aws:iam::661222050851:role/Gryffindor-Infra-Admin"
+        }
+      }
+    },
+    {
+      "Sid": "Statement2",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:RunInstances",
+        "ec2:StartInstances"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "Statement1",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:RunScheduledInstances",
+        "ec2:RunInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEqualsIgnoreCase": {
+          "aws:username": "AWSServiceRoleForAutoScaling"
+        }
+      }
+    },
+    {
+      "Sid": "Statement3",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:StartInstances",
+        "ec2:RunScheduledInstances",
+        "ec2:RunInstances"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "iam:AWSServiceName": "autoscaling.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "EC2InstanceProfileManagement",
+      "Effect": "Deny",
+      "Action": [
+        "iam:PassRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringLike": {
+          "iam:PassedToService": "ec2.amazonaws.com*"
+        }
+      }
+    },
+    {
+      "Sid": "EC2SpotManagement",
+      "Effect": "Deny",
+      "Action": [
+        "iam:CreateServiceLinkedRole"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "iam:AWSServiceName": "spot.amazonaws.com"
+        }
+      }
+    },
+    {
+      "Sid": "EventBridgeRuleManagement",
+      "Effect": "Deny",
+      "Action": [
+        "events:PutRule",
+        "events:PutTargets",
+        "events:RemoveTargets",
+        "events:DeleteRule",
+        "events:DescribeRule"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringEquals": {
+          "events:ManagedBy": "autoscaling.amazonaws.com"
+        }
+      }
+    }
+  ]
+}
+
+
