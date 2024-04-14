@@ -1,0 +1,23 @@
+#BackupEBS- Tag Compliance
+
+{
+  "tags": {
+    "BackupEBS": {
+      "tag_key": {
+        "@@assign": "BackupEBS"
+      },
+      "tag_value": {
+        "@@assign": [
+          "ebsprod",
+          "ebsnonprod",
+          "nobackup"
+        ]
+      },
+      "enforced_for": {
+        "@@assign": [
+          "ec2:volume"
+        ]
+      }
+    }
+  }
+}
