@@ -1,0 +1,23 @@
+#enforce-efs-encryption
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Deny",
+      "Action": [
+        "elasticfilesystem:CreateFileSystem"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "Bool": {
+          "elasticfilesystem:Encrypted": [
+            "false"
+          ]
+        }
+      }
+    }
+  ]
+}
