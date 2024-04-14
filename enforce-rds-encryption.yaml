@@ -1,0 +1,28 @@
+#enforce-rds-encryption
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Deny",
+      "Action": [
+        "rds:CreateDBCluster",
+        "rds:CreateDBInstance",
+        "rds:CreateDBInstanceReadReplica",
+        "rds:CreateDBSnapshot",
+        "rds:CreateDBClusterSnapshot"
+      ],
+      "Resource": [
+        "*",
+        "*"
+      ],
+      "Condition": {
+        "Bool": {
+          "rds:StorageEncrypted": [
+            "false"
+          ]
+        }
+      }
+    }
+  ]
+}
