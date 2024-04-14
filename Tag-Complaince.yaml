@@ -1,0 +1,127 @@
+#Tag-Complaince
+
+{
+  "tags": {
+    "Client": {
+      "tag_key": {
+        "@@assign": "Client"
+      },
+      "enforced_for": {
+        "@@assign": [
+          "ec2:instance",
+          "elasticfilesystem:*",
+          "elasticloadbalancing:loadbalancer"
+        ]
+      }
+    },
+    "Environment": {
+      "tag_key": {
+        "@@assign": "Environment"
+      },
+      "tag_value": {
+        "@@assign": [
+          "billing",
+          "cloudpam",
+          "dev",
+          "test",
+          "prod",
+          "qa",
+          "uat",
+          "ops",
+          "partner",
+          "poc",
+          "training",
+          "demo",
+          "sales/presales",
+          "sandbox",
+          "dr",
+          "stage",
+          "dev-support",
+          "test-support",
+          "prod-support",
+          "qa-support",
+          "uat-support",
+          "poc-support",
+          "ops-support",
+          "stage-support",
+          "partner-support",
+          "engineering",
+          "preprod",
+          "preprod-support",
+          "billing-support",
+          "cloudpam-support",
+          "sandbox-support",
+          "engineering-support",
+          "sales/presales-support",
+          "qateamclone",
+          "TestFinal",
+          "nonprod",
+          "nonprod-support",
+          "devclone",
+          "prodclone",
+          "testclone",
+          "qaclone",
+          "uatclone",
+          "globalops",
+          "infra-engineering",
+          "platform-engineering",
+          "dev-migrate",
+          "test-migrate",
+          "prod-migrate",
+          "qa-migrate",
+          "uat-migrate",
+          "sandbox-migrate",
+          "stage-migrate",
+          "engineering-migrate",
+          "preprod-migrate",
+          "partner-migrate",
+          "eicmigration",
+          "release",
+          "cloudops",
+          "infosec",
+          "cse",
+          "csd",
+          "cpe",
+          "edevops",
+          "fieldengineering",
+          "p-o7lka5n7i8de",
+          "ps",
+          "pentest",
+          "ps-migrate",
+          "sre"
+        ]
+      },
+      "enforced_for": {
+        "@@assign": [
+          "ec2:instance",
+          "elasticfilesystem:*",
+          "elasticloadbalancing:loadbalancer"
+        ]
+      }
+    },
+    "Name": {
+      "tag_key": {
+        "@@assign": "Name"
+      },
+      "enforced_for": {
+        "@@assign": [
+          "ec2:instance",
+          "elasticfilesystem:*",
+          "elasticloadbalancing:loadbalancer"
+        ]
+      }
+    },
+    "Owner": {
+      "tag_key": {
+        "@@assign": "Owner"
+      },
+      "enforced_for": {
+        "@@assign": [
+          "ec2:instance",
+          "elasticfilesystem:*",
+          "elasticloadbalancing:loadbalancer"
+        ]
+      }
+    }
+  }
+}
