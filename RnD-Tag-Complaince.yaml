@@ -1,0 +1,110 @@
+#RnD-Tag-Complaince
+{
+  "tags": {
+    "Client": {
+      "tag_key": {
+        "@@assign": "Client"
+      },
+      "enforced_for": {
+        "@@assign": [
+          "ec2:instance",
+          "elasticfilesystem:*",
+          "elasticloadbalancing:loadbalancer"
+        ]
+      }
+    },
+    "Environment": {
+      "tag_key": {
+        "@@assign": "Environment"
+      },
+      "tag_value": {
+        "@@assign": [
+          "billing",
+          "cloudpam",
+          "dev",
+          "test",
+          "prod",
+          "qa",
+          "uat",
+          "ops",
+          "partner",
+          "poc",
+          "training",
+          "demo",
+          "sales/presales",
+          "sandbox",
+          "dr",
+          "stage",
+          "dev-support",
+          "test-support",
+          "prod-support",
+          "qa-support",
+          "uat-support",
+          "poc-support",
+          "ops-support",
+          "stage-support",
+          "partner-support",
+          "engineering",
+          "preprod",
+          "preprod-support",
+          "billing-support",
+          "cloudpam-support",
+          "sandbox-support",
+          "engineering-support",
+          "sales/presales-support",
+          "qateamclone",
+          "TestFinal",
+          "nonprod",
+          "nonprod-support",
+          "devclone",
+          "prodclone",
+          "testclone",
+          "qaclone",
+          "uatclone",
+          "globalops",
+          "infra-engineering",
+          "platform-engineering",
+          "cloudops",
+          "infosec",
+          "release",
+          "cpe",
+          "cse",
+          "edevops",
+          "eicmigration",
+          "sre"
+        ]
+      },
+      "enforced_for": {
+        "@@assign": [
+          "ec2:instance",
+          "elasticfilesystem:*",
+          "elasticloadbalancing:loadbalancer"
+        ]
+      }
+    },
+    "Name": {
+      "tag_key": {
+        "@@assign": "Name"
+      },
+      "enforced_for": {
+        "@@assign": [
+          "ec2:instance",
+          "elasticfilesystem:*",
+          "elasticloadbalancing:loadbalancer"
+        ]
+      }
+    },
+    "Owner": {
+      "tag_key": {
+        "@@assign": "Owner"
+      },
+      "enforced_for": {
+        "@@assign": [
+          "ec2:instance",
+          "elasticfilesystem:*",
+          "elasticloadbalancing:loadbalancer"
+        ]
+      }
+    }
+  }
+}
