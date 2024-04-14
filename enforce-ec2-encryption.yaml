@@ -1,0 +1,23 @@
+#enforce-ec2-encryption
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Deny",
+      "Action": [
+        "ec2:RunInstances"
+      ],
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "Bool": {
+          "ec2:Encrypted": [
+            "false"
+          ]
+        }
+      }
+    }
+  ]
+}
