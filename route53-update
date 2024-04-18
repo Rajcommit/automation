@@ -1,0 +1,1 @@
+aws route53 change-resource-record-sets --hosted-zone-id Z2SPJDRIGK6H1R --change-batch '{"Changes":[{"Action":"CREATE","ResourceRecordSet":{"Name":"example.com.","Type":"A","TTL":300,"ResourceRecords":[{"Value":"192.0.2.1"}]}}]}'
