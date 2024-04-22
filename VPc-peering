@@ -1,0 +1,9 @@
+## Creating VPC-peering using CLI (Automation)
+
+List of commands to be used: 
+Creating a peering: 
+* aws ec2 create-vpc-peering-connection --vpc-id <YOUR_VPC_ID> --peer-vpc-id <PEER_VPC_ID> --region us-east-1
+Accepting a peering:
+*aws ec2 accept-vpc-peering-connection --vpc-peering-connection-id <PEERING_CONNECTION_ID> --region <REGION>
+*Adding Route-Table
+
