@@ -18,7 +18,7 @@ echo "$nodegroups"
 # Fetching variables from the existing nodegroup
 nodegroup_info=$(aws eks describe-nodegroup \
     --cluster-name "$cluster_name" \
-    --nodegroup-name "$cluster_name" \
+    --nodegroup-name "$nodegroups" \
     --query 'nodegroup.{Name: nodegroupName, Subnets: subnets, ScalingConfig: scalingConfig, NodeRole: nodeRole, LaunchTemplate: launchTemplate, Tags: tags}' \
     --output json)
 
