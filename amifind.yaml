@@ -6,4 +6,32 @@ aws ec2 describe-images \
 
 
 
+
+
+
+
 aws ec2 describe-images     --owners amazon     --filters "Name=name,Values=*amazon-eks-arm64-node-1.21*" "Name=architecture,Values=arm64"     --query 'sort_by(Images, &CreationDate)[-1].ImageId'
+
+
+
+
+
+aws ec2 describe-instances --query "Reservations[*].Instances[*].[InstanceId, Tags[?Key=='Name'].Value | [0]]" --output text | grep "suedlink-prod-eks"
+
+aws ec2 describe-instances --filters "Name=tag:Name,Values=suedlink-prod-eks"
+
+
+aws ec2 describe-instances --instance-ids i-0b268a1eb97205376
+
+
+
+
+Image - ID
+
+
+# Get the ImageId of the instance
+IMAGE_ID=$(aws ec2 describe-instances --instance-ids i-0b268a1eb97205376 --query 'Reservations[*].Instances[*].ImageId' --output text)
+
+# Describe the image to get its name
+aws ec2 describe-images --image-ids $IMAGE_ID --query 'Images[*].Name' --output text
+
