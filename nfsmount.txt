@@ -1,0 +1,23 @@
+
+sudo yum -y install nfs-utils
+mkdir ~/efs-mount-point 
+sudo mount -t nfs -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport <mount-target-DNS>:/   ~/efs-mount-point  
+cd ~/efs-mount-point
+
+
+milwaukeetool-dev-eks  
+EFS DNS: .efs.us-east-1.amazonaws.com
+SHared-certs old: pvc-9ce710bc-9d0f-4b9c-bcf0-622a2d1dac21
+Shared Certs New: pvc-620a5b50-9689-4fe6-a3ea-6437aa839229
+ecm-shared old: pvc-79adc813-b0eb-43bb-a690-49394d94b8c5
+ecm-shared new: pvc-5de10925-48b4-4e89-8111-2324ed1cf3a4
+
+
+
+rm -rf pvc-620a5b50-9689-4fe6-a3ea-6437aa839229/*
+2:15 AM
+rm -rf pvc-5de10925-48b4-4e89-8111-2324ed1cf3a4/*
+2:16 AM
+cp -r pvc-9ce710bc-9d0f-4b9c-bcf0-622a2d1dac21/* pvc-620a5b50-9689-4fe6-a3ea-6437aa839229/ (edited) 
+2:16 AM
+cp -r pvc-79adc813-b0eb-43bb-a690-49394d94b8c5/* pvc-5de10925-48b4-4e89-8111-2324ed1cf3a4/
