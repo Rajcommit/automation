@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Get db and host from config 
+mysql_command=$(kubectl describe ConfigMap/create-db-user | grep -E "mysql -u [^ ]+ -h [^ ]+")
+
+# Get password
+password=$(kubectl get secrets/saviynt-mysql -o yaml | grep mysql-root-password | awk '{print $2}' | base64 --decode)
+
+# Extract hostname and username from MySQL command
+hostname=$(echo "$mysql_command" | awk '{for(i=1;i<=NF;i++) if($i == "-h"){print $(i+1);exit}}')
+username=$(echo "$mysql_command" | awk '{for(i=1;i<=NF;i++) if($i == "-u"){print $(i+1);exit}}')
+
+# Store the login command as a string without executing it
+login_command="mysql -h \"$hostname\" -u \"saviyntadmin\" -p\"$password\""
+
+# Print the login command
+echo "$login_command"
