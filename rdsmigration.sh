@@ -37,7 +37,26 @@ read -p "Please provide the region: " region
 # Check if the RDS endpoint variable is not empty
 if [ -n "$rds" ]; then
   # Describe RDS instances and filter by the provided endpoint
-  aws rds describe-db-instances --region "$region" | jq --arg rds "$rds" '.DBInstances[] | select(.Endpoint.Address == $rds)'
+    aws rds describe-db-instances --region "$region" | jq --arg rds "$rds" '.DBInstances[] | select(.Endpoint.Address == $rds)'
+
+
+#providing the variables and storing them in different variable
+
+DBInstanceIdentifier=$(aws rds describe-db-instances --region "$region" | jq --arg rds "$rds" '.DBInstances[] | select(.Endpoint.Address == $rds)' | grep DBIdentifier )
+DBInstanceClass=$(aws rds describe-db-instances --region "$region" | jq --arg rds "$rds" '.DBInstances[] | select(.Endpoint.Address == $rds)' | grep DBIdentifier ))
+Engine=$( aws rds describe-db-instances --region "$region" | jq --arg rds "$rds" '.DBInstances[] | select(.Endpoint.Address == $rds)' | grep Engine ) 
+DBInstanceStatus
+MasterUsername
+DBName
+Endpoint
+Address
+HostedZoneId
+AllocatedStorage
+VpcSecurityGroupId
+Status
+
+
+  
 else
   echo "The RDS endpoint not found"
 fi
